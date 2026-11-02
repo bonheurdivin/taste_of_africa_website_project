@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover traditional African recipes, explore dishes from different regions, and bring the rich flavors of Africa into your kitchen.">
+    <meta name="theme-color" content="#263D30">
+    <title>Explore Recipes | Tastes of Africa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="announcement-bar">
+        <p>A celebration of Africa's rich culinary heritage</p>
+    </div>
+
+    <header class="site-header">
+        <div class="container nav-container">
+
+            <a href="index.html" class="site-logo">
+                Tastes <span>of</span> Africa<span class="logo-dot">.</span>
+            </a>
+
+            <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="recipes.html" aria-current="page">Recipes</a>
+                <a href="regions.html">Explore Regions</a>
+                <a href="about.html">Our Story</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <button
+                class="theme-toggle"
+                id="theme-toggle"
+                type="button"
+                aria-label="Switch to dark mode"
+                title="Toggle dark mode">
+                ☾
+            </button>
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="primary-navigation">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="recipes-hero">
+            <div class="container recipes-hero-content">
+                <p class="eyebrow">FROM OUR CONTINENT TO YOUR KITCHEN</p>
+
+                <h1>Discover the Flavours of Africa</h1>
+
+                <p>
+                    Explore recipes shaped by generations of tradition,
+                    local ingredients, and the beautiful diversity of
+                    African food culture.
+                </p>
+
+                <a href="#recipe-collection" class="button button-primary">
+                    Explore Recipes
+                </a>
+            </div>
+        </section>
+
+
+        <!-- RECIPE COLLECTION -->
+        <section class="section recipe-collection" id="recipe-collection">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">THE RECIPE COLLECTION</p>
+                    <h2>Find Your Next Favourite Dish</h2>
+                    <p>
+                        From comforting everyday meals to celebrated
+                        traditional dishes, discover something delicious.
+                    </p>
+                </div>
+
+
+                <!-- SEARCH -->
+                <div class="recipe-tools">
+
+                    <div class="recipe-search">
+                        <label for="recipe-search">Search recipes</label>
+
+                        <input
+                            type="search"
+                            id="recipe-search"
+                            placeholder="Try Jollof Rice, Injera..."
+                            autocomplete="off">
+                    </div>
+
+                </div>
+
+
+                <!-- REGION FILTERS -->
+                <div class="recipe-filters" aria-label="Filter recipes by region">
+
+                    <button
+                        class="filter-button is-active"
+                        type="button"
+                        data-filter="all"
+                        aria-pressed="true">
+                        All Recipes
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter="west"
+                        aria-pressed="false">
+                        West Africa
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter="east"
+                        aria-pressed="false">
+                        East Africa
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter="north"
+                        aria-pressed="false">
+                        North Africa
+                    </button>
+
+                </div>
+
+
+                <!-- RECIPE COUNT -->
+                <p
+                    class="recipe-results-count"
+                    id="recipe-results-count"
+                    aria-live="polite">
+                    Showing 4 recipes
+                </p>
+
+
+                <!-- RECIPE CARDS -->
+                <div class="recipe-grid" id="recipe-grid">
+
+
+                    <!-- JOLLOF RICE -->
+                    <article
+                        class="recipe-card"
+                        data-region="west"
+                        data-search="jollof rice nigeria west africa tomato rice pepper">
+
+                        <div class="recipe-card-image">
+
+                            <img
+                                src="images/dishes/jollof-rice.jpg"
+                                alt="A delicious serving of Nigerian Jollof rice"
+                                loading="lazy">
+
+                            <button
+                                class="favorite-button"
+                                type="button"
+                                data-favorite="jollof-rice"
+                                aria-label="Save Jollof Rice to favorites"
+                                aria-pressed="false">
+                                ♡
+                            </button>
+
+                            <span class="recipe-region-tag">West Africa</span>
+
+                        </div>
+
+                        <div class="recipe-card-content">
+
+                            <p class="recipe-origin">NIGERIA</p>
+
+                            <h3>Jollof Rice</h3>
+
+                            <p>
+                                A beloved West African rice dish cooked
+                                in a rich blend of tomatoes, peppers,
+                                onions, and aromatic spices.
+                            </p>
+
+                            <a href="jollof-rice.html" class="text-link">
+                                Discover Recipe →
+                            </a>
+
+                        </div>
+                    </article>
+
+
+                    <!-- MOROCCAN TAGINE -->
+                    <article
+                        class="recipe-card"
+                        data-region="north"
+                        data-search="moroccan tagine morocco north africa lamb chicken vegetables spices">
+
+                        <div class="recipe-card-image">
+
+                            <img
+                                src="images/dishes/moroccan-tagine.jpg"
+                                alt="Traditional Moroccan tagine with vegetables and spices"
+                                loading="lazy">
+
+                            <button
+                                class="favorite-button"
+                                type="button"
+                                data-favorite="moroccan-tagine"
+                                aria-label="Save Moroccan Tagine to favorites"
+                                aria-pressed="false">
+                                ♡
+                            </button>
+
+                            <span class="recipe-region-tag">North Africa</span>
+
+                        </div>
+
+                        <div class="recipe-card-content">
+
+                            <p class="recipe-origin">MOROCCO</p>
+
+                            <h3>Moroccan Tagine</h3>
+
+                            <p>
+                                A slow-cooked traditional dish combining
+                                tender ingredients with fragrant spices
+                                and deep, comforting flavours.
+                            </p>
+
+                            <a href="tagine.html" class="text-link">
+                                Discover Recipe →
+                            </a>
+
+                        </div>
+                    </article>
+
+
+                    <!-- INJERA -->
+                    <article
+                        class="recipe-card"
+                        data-region="east"
+                        data-search="injera ethiopia east africa teff sourdough flatbread">
+
+                        <div class="recipe-card-image">
+
+                            <img
+                                src="images/dishes/injera.jpg"
+                                alt="Ethiopian injera flatbread served with traditional stews"
+                                loading="lazy">
+
+                            <button
+                                class="favorite-button"
+                                type="button"
+                                data-favorite="injera"
+                                aria-label="Save Injera to favorites"
+                                aria-pressed="false">
+                                ♡
+                            </button>
+
+                            <span class="recipe-region-tag">East Africa</span>
+
+                        </div>
+
+                        <div class="recipe-card-content">
+
+                            <p class="recipe-origin">ETHIOPIA</p>
+
+                            <h3>Injera</h3>
+
+                            <p>
+                                A distinctive, soft sourdough flatbread
+                                traditionally made with <mark>teff flour</mark>,
+                                enjoyed with a variety of stews.
+                            </p>
+
+                            <a href="injera.html" class="text-link">
+                                Discover Recipe →
+                            </a>
+
+                        </div>
+                    </article>
+
+
+                    <!-- ISOMBE -->
+                    <article
+                        class="recipe-card"
+                        data-region="east"
+                        data-search="isombe rwanda east africa cassava leaves groundnuts peanut">
+
+                        <div class="recipe-card-image">
+
+                            <img
+                                src="images/dishes/isombe.jpg"
+                                alt="Traditional Rwandan Isombe made with cassava leaves"
+                                loading="lazy">
+
+                            <button
+                                class="favorite-button"
+                                type="button"
+                                data-favorite="isombe"
+                                aria-label="Save Isombe to favorites"
+                                aria-pressed="false">
+                                ♡
+                            </button>
+
+                            <span class="recipe-region-tag">East Africa</span>
+
+                        </div>
+
+                        <div class="recipe-card-content">
+
+                            <p class="recipe-origin">RWANDA</p>
+
+                            <h3>Isombe</h3>
+
+                            <p>
+                                A traditional Rwandan dish prepared with
+                                finely cooked <mark>cassava leaves</mark>
+                                and groundnuts.
+                            </p>
+
+                            <a href="isombe.html" class="text-link">
+                                Discover Recipe →
+                            </a>
+
+                        </div>
+                    </article>
+
+
+                </div>
+
+
+                <!-- EMPTY SEARCH RESULTS -->
+                <div class="no-recipes" id="no-recipes" hidden>
+
+                    <h3>No recipes found</h3>
+
+                    <p>
+                        We couldn't find a recipe matching your search.
+                        Try another dish or choose a different region.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+                <a href="index.html" class="site-logo">
+                    Tastes<span>of</span>Africa
+                </a>
+
+                <p>
+                    Celebrating the stories, people, and flavours
+                    behind Africa's diverse culinary heritage.
+                </p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © <span id="current-year"></span>
+                    Tastes of Africa. All rights reserved.
+                </p>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
