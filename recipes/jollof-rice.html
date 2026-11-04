@@ -1,0 +1,589 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to prepare Nigerian Jollof Rice with this traditional recipe, ingredients, cooking instructions and video tutorial.">
+    <meta name="theme-color" content="#263D30">
+    <title>Nigerian Jollof Rice Recipe | Tastes of Africa</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="announcement-bar">
+        <p>Celebrating Africa, one dish at a time. <span>Discover our culinary heritage.</span></p>
+    </div>
+
+    <header class="site-header">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="site-logo" aria-label="Tastes of Africa homepage">
+                Tastes <span>of</span> Africa<span class="logo-dot">.</span>
+            </a>
+
+            <!-- Corrected layout group: Matches the home page layout exactly -->
+            <div class="nav-layout-group" style="display: flex; align-items: center; margin-left: auto; gap: 32px;">
+
+                <nav aria-label="Main navigation">
+                    <ul class="nav-links" id="primary-navigation">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../recipes.html" aria-current="page">Recipes</a></li>
+                        <li><a href="../regions.html">Explore Regions</a></li>
+                        <li><a href="../about.html">Our Story</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle"
+                        type="button" aria-label="Switch to dark mode"
+                        title="Toggle dark mode">
+                        ☾
+                    </button>
+
+                    <button class="menu-toggle" id="menu-toggle"
+                        type="button" aria-label="Open navigation menu"
+                        aria-expanded="false"
+                        aria-controls="primary-navigation">
+                        ☰
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <main id="main-content">
+
+        <!-- RECIPE HERO -->
+        <section class="recipe-detail-hero">
+
+            <img
+                src="../images/dishes/jollof-rice.jpg"
+                alt="Traditional Nigerian Jollof rice served with vegetables"
+                class="recipe-detail-image">
+
+            <div class="recipe-detail-overlay"></div>
+
+            <div class="container recipe-detail-heading">
+
+                <a href="../recipes.html" class="recipe-back-link">
+                    ← Back to all recipes
+                </a>
+
+                <p class="eyebrow">WEST AFRICA · NIGERIA</p>
+
+                <h1>Jollof Rice</h1>
+
+                <p>
+                    A beloved West African classic, rich in colour,
+                    flavour, and cultural tradition.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECIPE CONTENT -->
+        <section class="section recipe-detail-section">
+
+            <div class="container">
+
+                <div class="recipe-meta">
+
+                    <div>
+                        <span class="meta-label">PREPARATION</span>
+                        <strong>20 minutes</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">COOKING</span>
+                        <strong>50 minutes</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">TOTAL TIME</span>
+                        <strong>1 hour 10 minutes</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">DIFFICULTY</span>
+                        <strong>Easy</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- CULTURAL BACKGROUND -->
+                <div class="recipe-story">
+
+                    <p class="eyebrow">A TASTE OF NIGERIA</p>
+
+                    <h2>A Dish That Brings People Together</h2>
+
+                    <p>
+                        Jollof Rice is one of West Africa's most celebrated
+                        dishes. Its signature red-orange colour comes from
+                        a rich tomato and pepper base, while aromatic
+                        seasonings give it its distinctive flavour.
+                    </p>
+
+                    <p>
+                        Across West Africa, different countries prepare
+                        their own versions of Jollof Rice. In Nigeria,
+                        it is especially popular at family gatherings,
+                        celebrations, parties, and everyday meals.
+                    </p>
+
+                </div>
+
+
+                <!-- INGREDIENTS AND INSTRUCTIONS -->
+                <div class="recipe-main-grid">
+
+                    <aside class="ingredients-panel">
+
+                        <p class="eyebrow">WHAT YOU NEED</p>
+
+                        <h2>Ingredients</h2>
+
+                        <p class="ingredients-intro">
+                            Adjust the servings to automatically scale
+                            the ingredient quantities.
+                        </p>
+
+                        <div class="servings-control">
+
+                            <label for="servings">Number of servings</label>
+
+                            <div class="servings-buttons">
+
+                                <button
+                                    type="button"
+                                    id="servings-decrease"
+                                    aria-label="Decrease servings">
+                                    âˆ’
+                                </button>
+
+                                <output id="servings" aria-live="polite" aria-atomic="true">4</output>
+
+                                <button
+                                    type="button"
+                                    id="servings-increase"
+                                    aria-label="Increase servings">
+                                    +
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <ul class="ingredient-list" id="ingredient-list">
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="1.5"
+                                        data-unit="cups">
+                                        1.5 cups
+                                    </span>
+                                    long-grain parboiled rice
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="2"
+                                        data-unit="small red bell peppers">
+                                        2 small red bell peppers
+                                    </span>
+                                    chopped
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="1"
+                                        data-unit="small onion">
+                                        1 small onion
+                                    </span>
+                                    chopped
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="1"
+                                        data-unit="plum tomato">
+                                        1 plum tomato
+                                    </span>
+                                    chopped
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="3"
+                                        data-unit="garlic cloves">
+                                        3 garlic cloves
+                                    </span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="1"
+                                        data-unit="habanero or Scotch bonnet pepper">
+                                        1 habanero or Scotch bonnet pepper
+                                    </span>
+                                    (optional)
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="3"
+                                        data-unit="tablespoons vegetable oil">
+                                        3 tablespoons vegetable oil
+                                    </span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="2"
+                                        data-unit="tablespoons tomato paste">
+                                        2 tablespoons tomato paste
+                                    </span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="2"
+                                        data-unit="teaspoons curry powder">
+                                        2 teaspoons curry powder
+                                    </span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="2"
+                                        data-unit="teaspoons smoked paprika">
+                                        2 teaspoons smoked paprika
+                                    </span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="2"
+                                        data-unit="teaspoons fresh thyme">
+                                        2 teaspoons fresh thyme
+                                    </span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="3"
+                                        data-unit="bay leaves">
+                                        3 bay leaves
+                                    </span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span
+                                        class="ingredient-quantity"
+                                        data-base-quantity="1.5"
+                                        data-unit="cups chicken broth">
+                                        1.5 cups chicken broth
+                                    </span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    Salt to taste
+                                </label>
+                            </li>
+
+                        </ul>
+
+                        <p class="ingredient-note">
+                            <strong>Tip:</strong> Adjust the pepper
+                            quantity to your preferred level of heat.
+                        </p>
+
+                    </aside>
+
+
+                    <!-- COOKING INSTRUCTIONS -->
+                    <div class="instructions-panel">
+
+                        <p class="eyebrow">LET'S GET COOKING</p>
+
+                        <h2>Cooking Instructions</h2>
+
+                        <p>
+                            Follow these steps to prepare a delicious
+                            pot of Nigerian Jollof Rice.
+                        </p>
+
+
+                        <details open>
+                            <summary>Step 1 â€” Prepare the pepper mixture</summary>
+                            <p>
+                                Blend the red bell peppers, tomato,
+                                onion, garlic, and optional Scotch
+                                bonnet pepper until smooth.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>Step 2 â€” Prepare the tomato base</summary>
+                            <p>
+                                Heat the vegetable oil in a large pot.
+                                Add the tomato paste and cook for a few
+                                minutes, stirring regularly.
+                            </p>
+                            <p>
+                                Add the blended pepper mixture and
+                                cook until it thickens and the excess
+                                liquid reduces.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>Step 3 â€” Add the seasonings</summary>
+                            <p>
+                                Stir in the curry powder, smoked paprika,
+                                thyme, bay leaves, and salt. Allow the
+                                mixture to simmer so the flavours combine.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>Step 4 â€” Add the rice</summary>
+                            <p>
+                                Wash the parboiled rice and drain it.
+                                Add it to the tomato mixture, then pour
+                                in the chicken broth. Stir until the rice
+                                is evenly coated.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>Step 5 â€” Cook until tender</summary>
+                            <p>
+                                Cover the pot and cook over low heat
+                                until the rice is tender and the liquid
+                                has been absorbed. Stir occasionally
+                                and add a little water if necessary.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>Step 6 â€” Serve and enjoy</summary>
+                            <p>
+                                Remove the bay leaves, gently fluff
+                                the rice with a fork, and serve hot.
+                                Enjoy it with grilled chicken,
+                                fried plantain, or a fresh salad.
+                            </p>
+                        </details>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COOKING VIDEO -->
+                <section class="recipe-video-section">
+
+                    <p class="eyebrow">WATCH AND LEARN</p>
+
+                    <h2>See How It's Prepared</h2>
+
+                    <p>
+                        Follow a visual cooking tutorial to see how
+                        Nigerian Jollof Rice comes together.
+                    </p>
+
+                    <div class="video-wrapper">
+
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/4V_GaurkxZ8"
+                            title="How to cook Nigerian Jollof Rice - Joyful Cook"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </section>
+
+
+                <!-- COUNTRY OF ORIGIN -->
+                <section class="recipe-origin-section">
+
+                    <p class="eyebrow">EXPLORE ITS ORIGINS</p>
+
+                    <h2>Discover Nigeria</h2>
+
+                    <p>
+                        Jollof Rice is a celebrated dish throughout
+                        West Africa, with Nigeria being home to
+                        one of its most popular versions.
+                    </p>
+
+                    <div class="map-wrapper">
+
+                        <iframe
+                            src="https://maps.google.com/maps?q=Nigeria&t=&z=5&ie=UTF8&iwloc=&output=embed"
+                            title="Map showing Nigeria in West Africa"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                    </div>
+
+                </section>
+
+
+                <!-- RECIPE SOURCE -->
+                <p class="recipe-source">
+                    Recipe inspiration:
+                    <a
+                        href="https://www.foodnetwork.com/recipes/food-network-kitchen/nigerian-jollof-rice-19493519"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Food Network â€” Nigerian Jollof Rice
+                    </a>.
+                    Ingredient quantities are presented as an
+                    educational adaptation.
+                </p>
+
+                <div class="recipe-return-link">
+                    <a href="../recipes.html" class="button button-primary">
+                        Explore More Recipes
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <a href="../index.html" class="site-logo">
+                        Tastes <span>of</span> Africa<span class="logo-dot">.</span>
+                    </a>
+
+                    <p>
+                        Celebrating the flavors, traditions
+                        and stories of African cuisine.
+                        One dish at a time.
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3>Explore</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="../recipes.html">Our Recipes</a></li>
+                        <li><a href="../regions.html">Our Regions</a></li>
+                        <li><a href="../about.html">Our Story</a></li>
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h3>Get in Touch</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="../contact.html">Contact Us</a></li>
+                        <li><a href="../about.html">Our Mission</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="current-year">2026</span>
+                    Tastes of Africa. Celebrating African culinary heritage.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
