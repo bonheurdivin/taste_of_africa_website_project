@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Tastes of Africa. Share your thoughts, food stories and questions about African cuisine.">
+    <title>Contact Us | Tastes of Africa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="announcement-bar">
+        <p>Celebrating Africa, one dish at a time. <span>Discover our culinary heritage.</span></p>
+    </div>
+
+    <header class="site-header">
+        <div class="container nav-container">
+
+            <a href="index.html" class="site-logo" aria-label="Tastes of Africa homepage">
+                Tastes <span>of</span> Africa<span class="logo-dot">.</span>
+            </a>
+
+            <div class="nav-layout-group" style="display: flex; align-items: center; margin-left: auto; gap: 32px;">
+
+                <nav aria-label="Main navigation">
+                    <ul class="nav-links" id="primary-navigation">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="regions.html">Explore Regions</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="contact.html" aria-current="page">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle"
+                        type="button" aria-label="Switch to dark mode"
+                        title="Toggle dark mode">
+                        ☾
+                    </button>
+
+                    <button class="menu-toggle" id="menu-toggle"
+                        type="button" aria-label="Open navigation menu"
+                        aria-expanded="false"
+                        aria-controls="primary-navigation">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- Contact hero -->
+        <section class="contact-hero">
+            <div class="container contact-hero-content">
+                <span class="eyebrow">Let's connect</span>
+                <h1>We'd love to hear from you.</h1>
+                <p>
+                    Have a question, a food story or a traditional
+                    recipe to share? Let's start a conversation.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact form and information -->
+        <section class="section contact-main-section">
+            <div class="container contact-layout">
+
+                <div class="contact-information">
+                    <span class="eyebrow">Get in touch</span>
+                    <h2>Every great conversation starts somewhere.</h2>
+
+                    <p>
+                        Whether you want to learn more about African
+                        cuisine, suggest a traditional dish or share
+                        feedback about our website, your message
+                        is welcome.
+                    </p>
+
+                    <div class="contact-info-item">
+                        <span class="contact-info-number">01</span>
+                        <div>
+                            <h3>Share your knowledge</h3>
+                            <p>
+                                Tell us about a traditional dish or
+                                food culture from your community.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <span class="contact-info-number">02</span>
+                        <div>
+                            <h3>Ask a question</h3>
+                            <p>
+                                Get in touch about our recipes,
+                                regions or culinary stories.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <span class="contact-info-number">03</span>
+                        <div>
+                            <h3>Send feedback</h3>
+                            <p>
+                                Let us know how we can improve
+                                your experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-card">
+
+                    <form id="contact-form">
+
+                        <div class="form-group">
+                            <label for="contact-name">Your name</label>
+                            <input
+                                type="text"
+                                id="contact-name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">Email address</label>
+                            <input
+                                type="email"
+                                id="contact-email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-country">Country</label>
+                            <select id="contact-country" name="country" required>
+                                <option value="">Select your country</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Ghana">Ghana</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Ethiopia">Ethiopia</option>
+                                <option value="Uganda">Uganda</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Morocco">Morocco</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message">Your message</label>
+                            <textarea
+                                id="contact-message"
+                                name="message"
+                                rows="6"
+                                placeholder="Tell us what's on your mind..."
+                                minlength="21"
+                                required></textarea>
+                            <small>Minimum 21 characters.</small>
+                        </div>
+
+                        <button type="submit" class="button button-primary contact-submit">
+                            Send message →
+                        </button>
+                    </form>
+
+                    <div id="contact-success" class="contact-success" hidden aria-live="polite" tabindex="-1">
+                        <span class="success-icon" aria-hidden="true">✓</span>
+                        <h2>Thank you!</h2>
+                        <p id="contact-success-message"></p>
+                        <button type="button" id="contact-reset" class="button button-secondary">
+                            Send another message
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Closing message -->
+        <section class="section contact-closing">
+            <div class="container">
+                <span class="eyebrow">Celebrating food and community</span>
+                <h2>Every dish has a story. What's yours?</h2>
+                <a href="recipes.html" class="text-link">
+                    Explore African recipes →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="site-logo">
+                        Tastes <span>of</span> Africa<span class="logo-dot">.</span>
+                    </a>
+
+                    <p>
+                        Celebrating the flavors, traditions
+                        and stories of African cuisine.
+                        One dish at a time.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Explore</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="recipes.html">Our Recipes</a></li>
+                        <li><a href="regions.html">Our Regions</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Get in Touch</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">Our Mission</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © <span id="current-year">2026</span>
+                    Tastes of Africa. Celebrating African culinary heritage.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
