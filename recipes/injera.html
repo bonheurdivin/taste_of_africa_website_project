@@ -1,0 +1,415 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Ethiopian injera, a traditional fermented teff flatbread. Explore its cultural heritage and learn how to prepare it.">
+    <title>Ethiopian Injera | Tastes of Africa</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="announcement-bar">
+        <p>Celebrating Africa, one dish at a time. <span>Discover our culinary heritage.</span></p>
+    </div>
+    
+    <header class="site-header">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="site-logo" aria-label="Tastes of Africa homepage">
+                Tastes <span>of</span> Africa<span class="logo-dot">.</span>
+            </a>
+
+            <div class="nav-layout-group" style="display: flex; align-items: center; margin-left: auto; gap: 32px;">
+
+                <nav aria-label="Main navigation">
+                    <ul class="nav-links" id="primary-navigation">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../recipes.html" aria-current="page">Recipes</a></li>
+                        <li><a href="../regions.html">Explore Regions</a></li>
+                        <li><a href="../about.html">Our Story</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle"
+                        type="button" aria-label="Switch to dark mode"
+                        title="Toggle dark mode">
+                        ☾
+                    </button>
+
+                    <button class="menu-toggle" id="menu-toggle"
+                        type="button" aria-label="Open navigation menu"
+                        aria-expanded="false"
+                        aria-controls="primary-navigation">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="recipe-detail-hero">
+            <img
+                src="../images/dishes/injera.jpg"
+                alt="Traditional Ethiopian injera flatbread with its characteristic spongy texture"
+                class="recipe-detail-image">
+
+            <div class="recipe-detail-overlay"></div>
+
+            <div class="container recipe-detail-heading">
+                <a href="../recipes.html" class="recipe-back-link">
+                    ← Back to all recipes
+                </a>
+
+                <p class="eyebrow">Ethiopia · East Africa</p>
+
+                <h1>Ethiopian Injera</h1>
+
+                <p>
+                    A soft, tangy and naturally fermented flatbread made
+                    from teff, bringing people together around the table.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+
+                <div class="recipe-meta">
+                    <div>
+                        <span class="meta-label">Preparation</span>
+                        <strong>15 minutes</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">Fermentation</span>
+                        <strong>48â€“72 hours</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">Cooking</span>
+                        <strong>2â€“3 minutes each</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">Difficulty</span>
+                        <strong>Medium</strong>
+                    </div>
+                </div>
+
+                <div class="recipe-story">
+                    <p class="eyebrow">A taste of Ethiopia</p>
+                    <h2>More than just a flatbread</h2>
+
+                    <p>
+                        Injera is a central part of Ethiopian food culture.
+                        Made primarily from <mark>teff flour</mark>, this
+                        fermented flatbread is known for its soft, spongy
+                        texture, slightly sour flavour and distinctive
+                        honeycomb-like holes.
+                    </p>
+
+                    <p>
+                        Injera is traditionally served on a large shared
+                        platter with dishes such as spicy stews, lentils
+                        and vegetables. Pieces of the bread are torn off
+                        and used to scoop up the accompanying food, making
+                        meals an important experience of sharing and
+                        togetherness.
+                    </p>
+                </div>
+
+                <div class="recipe-main-grid">
+
+                    <section class="ingredients-panel">
+                        <p class="eyebrow">What you'll need</p>
+                        <h2>Ingredients</h2>
+
+                        <div class="servings-control">
+                            <span>Adjust servings</span>
+
+                            <div class="servings-buttons">
+                                <button type="button" id="servings-decrease"
+                                    aria-label="Decrease servings">âˆ’</button>
+
+                                <output id="servings"
+                                    aria-live="polite"
+                                    aria-atomic="true">4</output>
+
+                                <button type="button" id="servings-increase"
+                                    aria-label="Increase servings">+</button>
+                            </div>
+                        </div>
+
+                        <ul class="ingredient-list">
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="2"
+                                    data-unit="cups">2 cups</span>
+                                teff flour
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="3"
+                                    data-unit="cups">3 cups</span>
+                                lukewarm water, plus extra if needed
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="2"
+                                    data-unit="tbsp">2 tbsp</span>
+                                ersho (traditional fermentation starter),
+                                if available
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="0.25"
+                                    data-unit="tsp">Â¼ tsp</span>
+                                instant yeast (optional alternative starter)
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="0.5"
+                                    data-unit="tsp">Â½ tsp</span>
+                                salt (optional)
+                            </li>
+                        </ul>
+
+                        <p class="ingredient-note">
+                            Traditional injera is often prepared using
+                            ersho, a starter saved from a previous batch.
+                            Yeast is a convenient alternative for this
+                            adapted home recipe.
+                        </p>
+                    </section>
+
+                    <section class="instructions-panel">
+                        <p class="eyebrow">Let's get cooking</p>
+                        <h2>Cooking instructions</h2>
+
+                        <details open>
+                            <summary>1. Prepare the batter</summary>
+                            <p>
+                                Place the teff flour in a large, clean
+                                mixing bowl. Gradually add the lukewarm
+                                water while stirring until you have a
+                                smooth mixture without lumps.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>2. Add the starter</summary>
+                            <p>
+                                Stir in the ersho starter if available.
+                                If using the yeast alternative, add the
+                                instant yeast instead and mix thoroughly.
+                                Cover the bowl loosely with a clean cloth
+                                or lid.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>3. Allow fermentation</summary>
+                            <p>
+                                Leave the batter in a suitable clean
+                                container at room temperature for
+                                approximately 48â€“72 hours. Fermentation
+                                time varies with temperature and the
+                                starter used. The batter should develop
+                                bubbles and a pleasantly tangy aroma.
+                                Discard it if you see mold or notice
+                                an unpleasant or rotten smell.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>4. Prepare the batter for cooking</summary>
+                            <p>
+                                Stir the fermented mixture. Pour off
+                                excess surface liquid if necessary.
+                                Add a little water gradually until the
+                                batter reaches a thin, pourable
+                                consistency. Stir in the salt if desired.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>5. Cook the injera</summary>
+                            <p>
+                                Heat a large non-stick skillet or flat
+                                griddle over medium heat. Pour the batter
+                                in a circular motion, starting around
+                                the outside and moving towards the centre.
+                                Spread it into a thin, even layer.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>6. Look for the characteristic holes</summary>
+                            <p>
+                                Cover the pan with a lid. Allow the injera
+                                to cook for approximately 2â€“3 minutes.
+                                Small holes should appear across the
+                                surface as it cooks. The top should look
+                                set and the edges should begin to lift.
+                                Do not flip it.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>7. Serve and enjoy</summary>
+                            <p>
+                                Carefully remove the injera and place it
+                                on a clean surface to cool. Repeat with
+                                the remaining batter. Serve with Ethiopian
+                                stews, lentils and vegetable dishes.
+                            </p>
+                        </details>
+                    </section>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section recipe-video-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Watch and learn</p>
+                    <h2>See how it's made</h2>
+                    <p>
+                        Watch a traditional Ethiopian demonstration
+                        of injera prepared using teff flour.
+                    </p>
+                </div>
+
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/cbmQAKdjb9I"
+                        title="Ethiopian Injera - How to Make Injera Using Teff Only"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="section recipe-origin-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Discover its roots</p>
+                    <h2>From Ethiopia to your kitchen</h2>
+                    <p>
+                        Explore Ethiopia, the East African home of
+                        this iconic fermented flatbread.
+                    </p>
+                </div>
+
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Ethiopia&t=&z=5&ie=UTF8&iwloc=&output=embed"
+                        title="Map showing Ethiopia in East Africa"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <p class="recipe-source">
+                    Recipe research:
+                    <a href="https://www.fao.org/fileadmin/user_upload/inpho/docs/Post_Harvest_Compendium_-_TEF.pdf"
+                        target="_blank" rel="noopener noreferrer">
+                        FAO â€“ Teff: Post-harvest Operations
+                    </a>
+                    and
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/8970856/"
+                        target="_blank" rel="noopener noreferrer">
+                        A Review on Factors Influencing the Fermentation Process of Teff
+                    </a>.
+                    Ingredient quantities and instructions have been adapted
+                    for this educational website.
+                </p>
+
+                <div class="recipe-return-link">
+                    <a href="../recipes.html" class="button button-primary">
+                        Explore more African recipes
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <a href="../index.html" class="site-logo">
+                        Tastes <span>of</span> Africa<span class="logo-dot">.</span>
+                    </a>
+
+                    <p>
+                        Celebrating the flavors, traditions
+                        and stories of African cuisine.
+                        One dish at a time.
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3>Explore</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="../recipes.html">Our Recipes</a></li>
+                        <li><a href="../regions.html">Our Regions</a></li>
+                        <li><a href="../about.html">Our Story</a></li>
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h3>Get in Touch</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="../contact.html">Contact Us</a></li>
+                        <li><a href="../about.html">Our Mission</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="current-year">2026</span>
+                    Tastes of Africa. Celebrating African culinary heritage.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

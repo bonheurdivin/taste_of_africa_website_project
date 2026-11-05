@@ -1,0 +1,456 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Isombe, a traditional Rwandan cassava-leaf dish prepared with groundnuts and vegetables. Explore its cultural heritage and recipe.">
+    <title>Rwandan Isombe | Tastes of Africa</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="announcement-bar">
+        <p>Celebrating Africa, one dish at a time. <span>Discover our culinary heritage.</span></p>
+    </div>
+
+    <header class="site-header">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="site-logo" aria-label="Tastes of Africa homepage">
+                Tastes <span>of</span> Africa<span class="logo-dot">.</span>
+            </a>
+
+            <div class="nav-layout-group" style="display: flex; align-items: center; margin-left: auto; gap: 32px;">
+
+                <nav aria-label="Main navigation">
+                    <ul class="nav-links" id="primary-navigation">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../recipes.html" aria-current="page">Recipes</a></li>
+                        <li><a href="../regions.html">Explore Regions</a></li>
+                        <li><a href="../about.html">Our Story</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle"
+                        type="button" aria-label="Switch to dark mode"
+                        title="Toggle dark mode">
+                        ☾
+                    </button>
+
+                    <button class="menu-toggle" id="menu-toggle"
+                        type="button" aria-label="Open navigation menu"
+                        aria-expanded="false"
+                        aria-controls="primary-navigation">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="recipe-detail-hero">
+            <img
+                src="../images/dishes/isombe.jpg"
+                alt="Rwandan isombe, a traditional cassava-leaf dish"
+                class="recipe-detail-image">
+
+            <div class="recipe-detail-overlay"></div>
+
+            <div class="container recipe-detail-heading">
+                <a href="../recipes.html" class="recipe-back-link">
+                    ← Back to all recipes
+                </a>
+
+                <p class="eyebrow">Rwanda · East Africa</p>
+
+                <h1>Rwandan Isombe</h1>
+
+                <p>
+                    A comforting Rwandan favourite made from cassava leaves,
+                    groundnuts and vegetables, slowly cooked into a rich,
+                    flavourful dish.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+
+                <div class="recipe-meta">
+                    <div>
+                        <span class="meta-label">Preparation</span>
+                        <strong>20 minutes</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">Cooking</span>
+                        <strong>1 hour 10 minutes</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">Total time</span>
+                        <strong>1 hour 30 minutes</strong>
+                    </div>
+
+                    <div>
+                        <span class="meta-label">Difficulty</span>
+                        <strong>Medium</strong>
+                    </div>
+                </div>
+
+                <div class="recipe-story">
+                    <p class="eyebrow">A taste of Rwanda</p>
+                    <h2>A beloved dish from the heart of Rwanda</h2>
+
+                    <p>
+                        Isombe is a well-known dish in Rwandan cuisine,
+                        prepared mainly from cassava leaves that are
+                        pounded or finely processed and cooked until tender.
+                        It is often enriched with <mark>groundnuts</mark>,
+                        vegetables and sometimes meat or fish.
+                    </p>
+
+                    <p>
+                        The dish is enjoyed in different ways across
+                        households and communities. Its rich texture and
+                        distinctive flavour make it a familiar part of
+                        many Rwandan meals, often served with rice,
+                        potatoes or other local staples.
+                    </p>
+                </div>
+
+                <div class="recipe-main-grid">
+
+                    <section class="ingredients-panel">
+                        <p class="eyebrow">What you'll need</p>
+                        <h2>Ingredients</h2>
+
+                        <div class="servings-control">
+                            <span>Adjust servings</span>
+
+                            <div class="servings-buttons">
+                                <button type="button" id="servings-decrease"
+                                    aria-label="Decrease servings">âˆ’</button>
+
+                                <output id="servings"
+                                    aria-live="polite"
+                                    aria-atomic="true">4</output>
+
+                                <button type="button" id="servings-increase"
+                                    aria-label="Increase servings">+</button>
+                            </div>
+                        </div>
+
+                        <ul class="ingredient-list">
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="500"
+                                    data-unit="g">500 g</span>
+                                commercially prepared, pounded cassava leaves
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="500"
+                                    data-unit="ml">500 ml</span>
+                                chicken or vegetable broth
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="250"
+                                    data-unit="g">250 g</span>
+                                fresh spinach, washed and chopped
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="3"
+                                    data-unit="medium tomatoes">3 medium tomatoes</span>,
+                                chopped
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="1"
+                                    data-unit="large onion">1 large onion</span>,
+                                chopped
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="3"
+                                    data-unit="garlic cloves">3 garlic cloves</span>,
+                                crushed
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="1"
+                                    data-unit="medium green pepper">1 medium green pepper</span>,
+                                sliced
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="1"
+                                    data-unit="medium eggplant">1 medium eggplant</span>,
+                                cubed
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="3"
+                                    data-unit="tbsp">3 tbsp</span>
+                                peanut butter
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="3"
+                                    data-unit="tbsp">3 tbsp</span>
+                                vegetable or palm oil
+                            </li>
+
+                            <li>
+                                <span class="ingredient-quantity"
+                                    data-base-quantity="1"
+                                    data-unit="small bunch">1 small bunch</span>
+                                fresh coriander
+                            </li>
+
+                            <li>Salt to taste</li>
+                        </ul>
+
+                        <p class="ingredient-note">
+                            Use commercially prepared cassava leaves intended
+                            for cooking. If starting with fresh leaves, ensure
+                            they have been properly processed and thoroughly
+                            cooked according to safe food-preparation guidance.
+                        </p>
+                    </section>
+
+                    <section class="instructions-panel">
+                        <p class="eyebrow">Let's get cooking</p>
+                        <h2>Cooking instructions</h2>
+
+                        <details open>
+                            <summary>1. Prepare the ingredients</summary>
+                            <p>
+                                Wash and chop the spinach, tomatoes, onion,
+                                green pepper and coriander. Prepare the
+                                eggplant and crush the garlic. If using
+                                frozen prepared cassava leaves, thaw them
+                                according to the package instructions.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>2. Cook the cassava leaves thoroughly</summary>
+                            <p>
+                                Place the prepared cassava leaves in a large
+                                pot with the broth. Bring to a boil, then
+                                maintain a steady simmer until the leaves
+                                are thoroughly cooked and tender. Follow
+                                the preparation instructions on the
+                                cassava-leaf product.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>3. Prepare the vegetable mixture</summary>
+                            <p>
+                                In a separate pan, heat the oil over medium
+                                heat. Add the onion and garlic and cook
+                                until softened. Add the tomatoes, green
+                                pepper and eggplant. Stir and cook until
+                                the vegetables begin to soften.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>4. Combine the vegetables</summary>
+                            <p>
+                                Add the vegetable mixture to the pot of
+                                cooked cassava leaves. Stir thoroughly
+                                to combine the flavours.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>5. Add spinach and groundnuts</summary>
+                            <p>
+                                Add the chopped spinach and continue
+                                simmering until tender. Stir the peanut
+                                butter with a little warm broth in a
+                                separate bowl until smooth, then add it
+                                gradually to the pot.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>6. Simmer until rich and creamy</summary>
+                            <p>
+                                Allow the mixture to simmer gently,
+                                stirring occasionally, until the peanut
+                                butter is fully incorporated and the
+                                stew reaches a thick, creamy consistency.
+                                Ensure all ingredients are thoroughly cooked.
+                            </p>
+                        </details>
+
+                        <details>
+                            <summary>7. Season and serve</summary>
+                            <p>
+                                Add salt to taste and sprinkle with
+                                fresh coriander. Serve hot with rice,
+                                potatoes or another favourite accompaniment.
+                            </p>
+                        </details>
+                    </section>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section recipe-video-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Watch and learn</p>
+                    <h2>See how it's made</h2>
+                    <p>
+                        Follow a Rwandan cooking demonstration
+                        showing how to prepare cassava-leaf stew.
+                    </p>
+                </div>
+
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/k74VfpJ3HWg"
+                        title="How to Prepare Rwandan Isombe - Cassava Leaves Stew"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="section recipe-origin-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Discover its roots</p>
+                    <h2>From Rwanda to your kitchen</h2>
+                    <p>
+                        Explore Rwanda, where Isombe is enjoyed
+                        as part of the country's rich food culture.
+                    </p>
+                </div>
+
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Rwanda&t=&z=7&ie=UTF8&iwloc=&output=embed"
+                        title="Map showing Rwanda in East Africa"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <p class="recipe-source">
+                    Recipe inspiration:
+                    <a href="https://www.worldvision.org/economic-empowerment-news-stories/isombe-recipe"
+                        target="_blank" rel="noopener noreferrer">
+                        World Vision â€“ In the Kitchen: Isombe Recipe
+                    </a>
+                    and
+                    <a href="https://www.newtimes.co.rw/article/113661/Lifestyle/in-the-kitchen-recipe-isombe/"
+                        target="_blank" rel="noopener noreferrer">
+                        The New Times â€“ In the Kitchen: Recipe Isombe
+                    </a>.
+                    Ingredient quantities and instructions have been adapted
+                    for this educational website.
+                </p>
+
+                <div class="recipe-return-link">
+                    <a href="../recipes.html" class="button button-primary">
+                        Explore more African recipes
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <a href="../index.html" class="site-logo">
+                        Tastes <span>of</span> Africa<span class="logo-dot">.</span>
+                    </a>
+
+                    <p>
+                        Celebrating the flavors, traditions
+                        and stories of African cuisine.
+                        One dish at a time.
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3>Explore</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="../recipes.html">Our Recipes</a></li>
+                        <li><a href="../regions.html">Our Regions</a></li>
+                        <li><a href="../about.html">Our Story</a></li>
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h3>Get in Touch</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="../contact.html">Contact Us</a></li>
+                        <li><a href="../about.html">Our Mission</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="current-year">2026</span>
+                    Tastes of Africa. Celebrating African culinary heritage.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
