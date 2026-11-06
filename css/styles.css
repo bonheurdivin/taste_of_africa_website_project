@@ -1,0 +1,2659 @@
+
+/* =========================================
+   TASTES OF AFRICA
+   GLOBAL DESIGN SYSTEM
+========================================= */
+
+/* 1. GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
+
+
+/* 2. DESIGN TOKENS */
+:root {
+    /* Brand colors */
+    --color-forest: #263D30;
+    --color-terracotta: #C65D36;
+    --color-saffron: #E5AC45;
+
+    /* Light theme */
+    --color-background: #FAF6EE;
+    --color-surface: #FFFFFF;
+    --color-surface-alt: #E9E0D2;
+    --color-text: #382B24;
+    --color-text-muted: #74685E;
+    --color-border: #DED5C8;
+
+    /* Typography */
+    --font-heading: 'DM Serif Display', Georgia, serif;
+    --font-body: 'DM Sans', Arial, sans-serif;
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 6rem;
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+
+    /* Effects */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 999px;
+
+    --shadow-sm: 0 2px 8px rgba(38, 61, 48, 0.06);
+    --shadow-md: 0 8px 24px rgba(38, 61, 48, 0.10);
+    --shadow-lg: 0 16px 40px rgba(38, 61, 48, 0.14);
+
+    --transition: 0.3s ease;
+}
+
+/* 3. DARK THEME */
+[data-theme="dark"] {
+    --color-background: #191F1B;
+    --color-surface: #242D27;
+    --color-surface-alt: #354238;
+    --color-text: #F7F0E5;
+    --color-text-muted: #C0B8AA;
+    --color-border: #465348;
+
+    --color-forest: #232d24;
+    --color-terracotta: #E98962;
+    --color-saffron: #F0C36D;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.20);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* 4. GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    transition: background-color var(--transition),
+                color var(--transition);
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+img {
+    display: block;
+    height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    padding-left: 1.5rem;
+}
+
+::selection {
+    background-color: var(--color-saffron);
+    color: #263D30;
+}
+
+
+/* 5. ACCESSIBILITY */
+:focus-visible {
+    outline: 3px solid var(--color-saffron);
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.75rem 1rem;
+    background: var(--color-forest);
+    color: #FFFFFF;
+    border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* 6. TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+h3 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+}
+
+.section-label {
+    color: var(--color-terracotta);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+
+/* 7. REUSABLE LAYOUT */
+.container {
+    width: min(100% - 3rem, var(--container-width));
+    margin-inline: auto;
+}
+
+.section {
+    padding-block: var(--space-3xl);
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: var(--space-xl);
+}
+
+.section-heading p {
+    margin-top: var(--space-sm);
+    color: var(--color-text-muted);
+}
+
+.grid {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+/* 8. BUTTONS */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    transition: transform var(--transition),
+                background-color var(--transition),
+                color var(--transition),
+                border-color var(--transition);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-primary {
+    background-color: var(--color-forest);
+    color: #FFFFFF;
+}
+
+.button-primary:hover {
+    background-color: var(--color-terracotta);
+}
+
+.button-secondary {
+    background-color: var(--color-terracotta);
+    color: #FFFFFF;
+}
+
+.button-secondary:hover {
+    background-color: var(--color-forest);
+}
+
+.button-outline {
+    border-color: var(--color-forest);
+    color: var(--color-forest);
+    background: transparent;
+}
+
+.button-outline:hover {
+    background: var(--color-forest);
+    color: #FFFFFF;
+}
+
+
+/* 9. NAVIGATION */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: var(--header-height);
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+    min-height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+}
+
+.site-logo {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    color: var(--color-forest);
+}
+
+.site-logo span {
+    color: var(--color-terracotta);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links a {
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color: var(--color-terracotta);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.menu-toggle,
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-text);
+    background: var(--color-surface);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* 10. CARDS */
+.card {
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition),
+                box-shadow var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: var(--space-md);
+}
+
+
+/* 11. HIGHLIGHTED CONTENT */
+mark {
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    background: rgba(229, 172, 69, 0.35);
+    color: var(--color-text);
+}
+
+
+/* 12. FORMS */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: var(--space-md);
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition: border-color var(--transition),
+                box-shadow var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-terracotta);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(198, 93, 54, 0.15);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+
+/* 13. VIDEO AND EMBEDS */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: #000000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.map-wrapper iframe {
+    display: block;
+    width: 100%;
+    min-height: 350px;
+    border: 0;
+    border-radius: var(--radius-md);
+}
+
+
+/* 14. FOOTER */
+.site-footer {
+    padding-block: var(--space-2xl);
+    background: var(--color-forest);
+    color: #FFFFFF;
+}
+
+.site-footer h2,
+.site-footer h3 {
+    color: #FFFFFF;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-xl);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.7rem;
+}
+
+.footer-links a {
+    color: #F1E9DC;
+    transition: color var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--color-saffron);
+}
+
+.footer-bottom {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+}
+
+
+/* 15. UTILITY CLASSES */
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+
+/* 16. RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 1rem 1.5rem;
+        background: var(--color-background);
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.85rem 0;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --space-3xl: 3.5rem;
+        --header-height: 70px;
+    }
+
+    .container {
+        width: min(100% - 2rem, var(--container-width));
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding-block: var(--space-2xl);
+    }
+
+    .site-logo {
+        font-size: 1.4rem;
+    }
+}
+
+/* =========================================
+   HOMEPAGE STYLES
+========================================= */
+
+/* Announcement Bar */
+.announcement-bar {
+    padding: 0.55rem 1rem;
+    background: var(--color-forest);
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+}
+
+.announcement-bar p {
+    margin: 0;
+}
+
+.announcement-bar span {
+    color: var(--color-saffron);
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #263D30;
+    color: #FFFFFF;
+}
+
+.hero-background,
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    background: linear-gradient(
+        90deg,
+        rgba(18, 31, 23, 0.88) 0%,
+        rgba(18, 31, 23, 0.62) 48%,
+        rgba(18, 31, 23, 0.12) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-block: 6rem;
+    color: #FFFFFF;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--color-saffron);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.hero h1 {
+    max-width: 750px;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.hero h1 span {
+    color: var(--color-saffron);
+}
+
+.hero-content > p {
+    max-width: 570px;
+    color: #F3EDE2;
+    font-size: 1.08rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.hero-outline {
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #FFFFFF;
+}
+
+.hero-outline:hover {
+    background: #FFFFFF;
+    color: #263D30;
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 3rem;
+    color: #F1E9DC;
+    font-size: 0.85rem;
+}
+
+.hero-note-line {
+    width: 40px;
+    height: 1px;
+    background: var(--color-saffron);
+}
+
+.hero-scroll {
+    position: absolute;
+    right: 3rem;
+    bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+}
+
+
+/* Intro Section */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5rem;
+}
+
+.intro-image {
+    position: relative;
+}
+
+.intro-image img {
+    width: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius-sm);
+    background: #FFFFFF;
+    color: #263D30;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.intro-content h2 {
+    margin-block: 1rem 1.5rem;
+}
+
+.intro-content p {
+    color: var(--color-text-muted);
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: var(--color-terracotta);
+    font-weight: 700;
+    transition: color var(--transition);
+}
+
+.text-link:hover {
+    color: var(--color-forest);
+}
+
+
+/* Featured Dishes */
+.featured-section {
+    background: var(--color-surface-alt);
+}
+
+.featured-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.featured-heading h2 {
+    margin-block: 0.8rem;
+}
+
+.featured-heading p {
+    color: var(--color-text-muted);
+}
+
+.featured-heading > .text-link {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.dish-card {
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition),
+                box-shadow var(--transition);
+}
+
+.dish-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.dish-card figure {
+    position: relative;
+}
+
+.dish-image {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.dish-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.dish-card:hover .dish-image img {
+    transform: scale(1.06);
+}
+
+.dish-caption {
+    position: absolute;
+    right: 0.8rem;
+    bottom: 0.8rem;
+    left: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.dish-caption span {
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    background: var(--color-background);
+    color: var(--color-forest);
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.dish-content {
+    padding: 1.3rem;
+}
+
+.dish-content h3 {
+    margin-bottom: 0.7rem;
+}
+
+.dish-content p {
+    min-height: 115px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.dish-content .text-link {
+    font-size: 0.88rem;
+}
+
+
+/* Culinary Regions */
+.regions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.region-card {
+    position: relative;
+    display: block;
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: #263D30;
+    color: #FFFFFF;
+}
+
+.region-card > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.region-card:hover > img {
+    transform: scale(1.08);
+}
+
+.region-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    background: linear-gradient(
+        0deg,
+        rgba(15, 25, 19, 0.9),
+        rgba(15, 25, 19, 0.05) 100%
+    );
+}
+
+.region-overlay > span:first-child {
+    margin-bottom: 0.8rem;
+    color: var(--color-saffron);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.region-overlay h3 {
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+
+.region-overlay p {
+    color: #F1E9DC;
+}
+
+.region-arrow {
+    margin-top: 0.8rem;
+    color: var(--color-saffron);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+/* Food Culture */
+.culture-section {
+    background: var(--color-surface-alt);
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.culture-content h2 {
+    margin-block: 1rem 1.5rem;
+}
+
+.culture-content p {
+    color: var(--color-text-muted);
+}
+
+.culture-content .button {
+    margin-top: 1rem;
+}
+
+.culture-video {
+    width: 100%;
+}
+
+.video-caption {
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+
+/* Latest Stories */
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.story-card {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    transition: transform var(--transition),
+                box-shadow var(--transition);
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.story-card > img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.story-content {
+    padding: 1.5rem;
+}
+
+.story-category {
+    color: var(--color-terracotta);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.story-content h3 {
+    margin-block: 0.8rem;
+}
+
+.story-content p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+
+/* Newsletter */
+.newsletter-section {
+    padding-block: 5rem;
+    background: var(--color-surface-alt);
+    text-align: center;
+}
+
+.newsletter-content {
+    max-width: 750px;
+}
+
+.newsletter-content h2 {
+    margin-block: 1rem;
+}
+
+.newsletter-content > p {
+    color: var(--color-text-muted);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.8rem;
+    max-width: 580px;
+    margin: 2rem auto 0;
+}
+
+.newsletter-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.newsletter-feedback {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+
+/* Footer */
+.footer-brand .site-logo {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #FFFFFF;
+}
+
+.footer-brand .site-logo span {
+    color: var(--color-saffron);
+}
+
+.footer-brand p {
+    max-width: 350px;
+    color: #F1E9DC;
+}
+
+.logo-dot {
+    color: var(--color-terracotta);
+}
+
+
+/* Screen-reader-only content */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* Homepage Responsive Styles */
+@media (max-width: 1000px) {
+    .featured-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .intro-grid,
+    .culture-grid {
+        gap: 2.5rem;
+    }
+
+    .dish-content p {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 750px) {
+    .hero {
+        min-height: 620px;
+    }
+
+    .hero-overlay {
+        background: rgba(18, 31, 23, 0.72);
+    }
+
+    .hero-content {
+        padding-block: 5rem;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .intro-grid,
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .regions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .region-card {
+        min-height: 350px;
+    }
+
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 12vw, 4rem);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+    }
+
+    .intro-image img {
+        min-height: 280px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form .button {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   RECIPES PAGE
+========================================= */
+
+.recipes-hero {
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background:
+        linear-gradient(rgba(38, 61, 48, 0.82), rgba(38, 61, 48, 0.82)),
+        url("../images/hero/african-food-hero.jpg") center/cover no-repeat;
+    color: #FAF6EE;
+    padding: 80px 20px;
+}
+
+.recipes-hero-content {
+    max-width: 760px;
+}
+
+.recipes-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin: 16px 0;
+}
+
+.recipes-hero-content > p:not(.eyebrow) {
+    max-width: 620px;
+    margin: 0 auto 28px;
+    line-height: 1.8;
+}
+
+.recipes-hero .eyebrow {
+    color: #E5AC45;
+    letter-spacing: 3px;
+}
+
+.recipe-collection {
+    background: var(--color-cream);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 42px;
+}
+
+.section-heading h2 {
+    margin: 12px 0;
+}
+
+.recipe-tools {
+    max-width: 620px;
+    margin: 0 auto 28px;
+}
+
+.recipe-search {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.recipe-search label {
+    font-weight: 600;
+}
+
+.recipe-search input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid var(--color-sand);
+    border-radius: 8px;
+    background: var(--color-background);
+    color: var(--color-text);
+    font: inherit;
+}
+
+.recipe-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 28px 0;
+}
+
+.filter-button {
+    padding: 11px 20px;
+    border: 1px solid var(--color-forest);
+    border-radius: 30px;
+    background: transparent;
+    color: var(--color-forest);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.filter-button:hover,
+.filter-button.is-active {
+    background: var(--color-forest);
+    color: #FFFFFF;
+}
+
+.recipe-results-count {
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.recipe-card {
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--color-background);
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+.recipe-card[hidden] {
+    display: none;
+}
+
+.recipe-card-image {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.recipe-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.recipe-card:hover .recipe-card-image img {
+    transform: scale(1.04);
+}
+
+.favorite-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #FFFFFF;
+    color: #382B24;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.favorite-button.is-favorite {
+    color: #C65D36;
+}
+
+.recipe-region-tag {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    padding: 7px 13px;
+    border-radius: 20px;
+    background: #FAF6EE;
+    color: #382B24;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.recipe-card-content {
+    padding: 24px;
+}
+
+.recipe-origin {
+    color: var(--color-terracotta);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.recipe-card-content h3 {
+    margin: 8px 0 12px;
+}
+
+.recipe-card-content > p:not(.recipe-origin) {
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.text-link {
+    color: var(--color-terracotta);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.no-recipes {
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.no-recipes[hidden] {
+    display: none;
+}
+
+@media (max-width: 650px) {
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-filters {
+        gap: 9px;
+    }
+
+    .filter-button {
+        padding: 9px 14px;
+        font-size: 0.85rem;
+    }
+
+    .recipe-card-content {
+        padding: 20px;
+    }
+}
+
+/* =========================================
+   INDIVIDUAL RECIPE PAGES
+========================================= */
+
+.recipe-detail-hero {
+    position: relative;
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #FFFFFF;
+}
+
+.recipe-detail-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-detail-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(25, 38, 29, 0.88),
+        rgba(25, 38, 29, 0.35)
+    );
+}
+
+.recipe-detail-heading {
+    position: relative;
+    z-index: 1;
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+.recipe-back-link {
+    display: inline-block;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-bottom: 45px;
+}
+
+.recipe-back-link:hover {
+    text-decoration: underline;
+}
+
+.recipe-detail-heading .eyebrow {
+    color: #E5AC45;
+    letter-spacing: 3px;
+}
+
+.recipe-detail-heading h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    margin: 12px 0;
+}
+
+.recipe-detail-heading > p:last-child {
+    max-width: 560px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.recipe-detail-section {
+    background: var(--color-cream);
+}
+
+.recipe-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 28px;
+    margin-bottom: 65px;
+    background: var(--color-background);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-meta div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.meta-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--color-terracotta);
+}
+
+.recipe-story {
+    max-width: 780px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.recipe-story h2,
+.recipe-video-section h2,
+.recipe-origin-section h2 {
+    margin: 12px 0 18px;
+}
+
+.recipe-story > p:not(.eyebrow) {
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.recipe-main-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.5fr);
+    gap: 55px;
+    align-items: start;
+}
+
+.ingredients-panel,
+.instructions-panel {
+    min-width: 0;
+}
+
+.ingredients-panel h2,
+.instructions-panel h2 {
+    margin: 10px 0 16px;
+}
+
+.ingredients-intro,
+.instructions-panel > p:not(.eyebrow) {
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.servings-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    margin: 20px 0;
+    border-top: 1px solid var(--color-sand);
+    border-bottom: 1px solid var(--color-sand);
+}
+
+.servings-control > label {
+    font-weight: 700;
+}
+
+.servings-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.servings-buttons button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--color-forest);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-text);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.servings-buttons output {
+    min-width: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredient-list li {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--color-sand);
+    line-height: 1.6;
+}
+
+.ingredient-list label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.ingredient-list input {
+    margin-top: 5px;
+    accent-color: var(--color-forest);
+}
+
+.ingredient-list input:checked + .ingredient-quantity {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.ingredient-note {
+    margin-top: 24px;
+    padding: 17px;
+    border-left: 4px solid var(--color-terracotta);
+    background: var(--color-background);
+    line-height: 1.7;
+}
+
+.instructions-panel details {
+    border-bottom: 1px solid var(--color-sand);
+    padding: 19px 0;
+}
+
+.instructions-panel summary {
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 1.6;
+}
+
+.instructions-panel details p {
+    margin-top: 13px;
+    line-height: 1.8;
+}
+
+.instructions-panel summary::marker {
+    color: var(--color-terracotta);
+}
+
+.recipe-video-section,
+.recipe-origin-section {
+    max-width: 900px;
+    margin: 90px auto 0;
+    text-align: center;
+}
+
+.recipe-video-section > p:not(.eyebrow),
+.recipe-origin-section > p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+}
+
+.video-wrapper,
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000000;
+}
+
+.video-wrapper iframe,
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.recipe-source {
+    margin: 55px auto 0;
+    max-width: 850px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.recipe-source a {
+    color: var(--color-terracotta);
+    font-weight: 700;
+}
+
+.recipe-return-link {
+    text-align: center;
+    margin-top: 35px;
+}
+
+@media (max-width: 800px) {
+    .recipe-main-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .recipe-meta {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recipe-detail-hero {
+        min-height: 390px;
+    }
+}
+
+@media (max-width: 500px) {
+    .recipe-detail-heading h1 {
+        font-size: 3rem;
+    }
+
+    .recipe-meta {
+        padding: 20px;
+        gap: 22px 12px;
+    }
+
+    .recipe-meta strong {
+        font-size: 0.9rem;
+    }
+
+    .servings-control {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* ==========================================
+   CULINARY REGIONS DIRECTORY
+========================================== */
+
+.regions-hero {
+    padding: 110px 0 100px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(38, 61, 48, 0.96),
+            rgba(38, 61, 48, 0.78)
+        ),
+        url("../images/regions/west-africa.jpg") center/cover no-repeat;
+    color: #FAF6EE;
+}
+
+.regions-hero .container {
+    max-width: 1000px;
+}
+
+.regions-hero .eyebrow {
+    color: #E5AC45;
+}
+
+.regions-hero h1 {
+    max-width: 780px;
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.08;
+    margin-bottom: 24px;
+}
+
+.regions-hero > .container > p:last-child {
+    max-width: 680px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #F1E9DD;
+}
+
+.region-directory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+.region-directory-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--color-background);
+    border: 1px solid var(--color-sand);
+    border-radius: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.region-directory-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 35px rgba(56, 43, 36, 0.12);
+}
+
+.region-directory-image-link {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.region-directory-image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.region-directory-card:hover .region-directory-image-link img {
+    transform: scale(1.05);
+}
+
+.region-directory-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 26px;
+}
+
+.region-directory-content .eyebrow {
+    color: var(--color-terracotta);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.region-directory-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    line-height: 1.25;
+    color: var(--color-text);
+    margin: 12px 0;
+}
+
+.region-directory-content > p:not(.eyebrow) {
+    color: var(--color-text);
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.region-highlights {
+    font-size: 0.92rem;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-sand);
+}
+
+.region-highlights strong {
+    color: var(--color-forest);
+}
+
+.region-directory-content .text-link {
+    margin-top: auto;
+    padding-top: 14px;
+    font-weight: 700;
+}
+
+.region-message-section {
+    background: var(--color-sand);
+}
+
+.region-message {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.region-message h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 18px;
+}
+
+.region-message > p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 0 auto 28px;
+    line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+    .region-directory-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .regions-hero {
+        padding: 80px 0 70px;
+    }
+
+    .regions-hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .region-directory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .region-directory-content {
+        padding: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .region-directory-card,
+    .region-directory-image-link img {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   REGIONAL DETAIL PAGES
+========================================== */
+
+.region-detail-hero {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    color: #FAF6EE;
+}
+
+.west-africa-hero {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(38, 61, 48, 0.94),
+            rgba(38, 61, 48, 0.38)
+        ),
+        url("../images/regions/west-africa.jpg");
+}
+
+.region-detail-heading {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.region-back-link {
+    display: inline-block;
+    color: #FAF6EE;
+    margin-bottom: 35px;
+    font-weight: 600;
+}
+
+.region-back-link:hover {
+    color: #E5AC45;
+}
+
+.region-detail-heading .eyebrow {
+    color: #E5AC45;
+}
+
+.region-detail-heading h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    line-height: 1.05;
+    margin: 14px 0 22px;
+}
+
+.region-detail-heading > p:last-child {
+    max-width: 650px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #F1E9DD;
+}
+
+.region-introduction {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.region-intro-image img,
+.region-techniques-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.region-intro-content h2,
+.region-techniques-content h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin: 12px 0 22px;
+}
+
+.region-intro-content > p:not(.eyebrow),
+.region-techniques-content > p:not(.eyebrow) {
+    line-height: 1.85;
+    margin-bottom: 16px;
+}
+
+.region-staples-section {
+    background: var(--color-sand);
+}
+
+.region-staples-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.region-staple-card {
+    background: var(--color-background);
+    border-radius: 12px;
+    padding: 26px;
+    border: 1px solid var(--color-sand);
+}
+
+.region-staple-card h3 {
+    color: var(--color-forest);
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    margin-bottom: 10px;
+}
+
+.region-staple-card p {
+    line-height: 1.7;
+}
+
+.region-techniques {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.region-techniques-list {
+    padding-left: 22px;
+}
+
+.region-techniques-list li {
+    margin-bottom: 17px;
+    line-height: 1.75;
+}
+
+.region-techniques-list strong {
+    color: var(--color-forest);
+}
+
+.region-dishes-section {
+    background: var(--color-sand);
+}
+
+.region-dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.region-dish-card {
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--color-background);
+    border: 1px solid var(--color-sand);
+}
+
+.region-dish-card > img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.region-dish-content {
+    padding: 24px;
+}
+
+.region-dish-content .eyebrow {
+    color: var(--color-terracotta);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.region-dish-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    margin: 10px 0;
+}
+
+.region-dish-content > p:not(.eyebrow) {
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.region-dish-content .text-link {
+    font-weight: 700;
+}
+
+.region-video-note {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 14px;
+    color: var(--color-text);
+}
+
+.region-explore-more {
+    background: var(--color-sand);
+}
+
+.region-action-links {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Regional page responsive layouts */
+
+@media (max-width: 900px) {
+    .region-introduction,
+    .region-techniques {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .region-staples-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .region-dishes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .region-detail-hero {
+        min-height: 400px;
+    }
+
+    .region-detail-heading {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .region-staples-grid,
+    .region-dishes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .region-intro-image img,
+    .region-techniques-image img {
+        min-height: 250px;
+    }
+
+    .region-action-links {
+        flex-direction: column;
+    }
+
+    .region-action-links .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   EAST AFRICA REGIONAL PAGE
+========================================= */
+
+.east-africa-hero {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(25, 39, 29, 0.82),
+            rgba(25, 39, 29, 0.25)
+        ),
+        url("../images/regions/east-africa.jpg");
+}
+
+/* =========================================
+   NORTH AFRICA REGIONAL PAGE
+========================================= */
+
+.north-africa-hero {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(25, 39, 29, 0.82),
+            rgba(25, 39, 29, 0.25)
+        ),
+        url("../images/regions/north-africa.jpg");
+}
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(25, 39, 29, 0.88),
+            rgba(25, 39, 29, 0.30)
+        ),
+        url("../images/hero/african-food-hero.jpg") center/cover no-repeat;
+    color: #fff;
+}
+
+.about-hero-content {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.about-hero-content h1 {
+    max-width: 760px;
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    line-height: 1.05;
+    margin: 20px 0;
+}
+
+.about-hero-content p {
+    max-width: 580px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.about-introduction,
+.about-history,
+.about-global-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-intro-image img,
+.about-history-image img,
+.about-global-image img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
+.about-intro-content h2,
+.about-history-content h2,
+.about-global-text h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin: 15px 0 20px;
+}
+
+.about-intro-content p,
+.about-history-content p,
+.about-global-text p {
+    line-height: 1.85;
+    margin-bottom: 16px;
+}
+
+.about-mission-section {
+    background: var(--color-forest);
+    color: #fff;
+    text-align: center;
+}
+
+.about-mission-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.about-mission-content h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 15px 0 25px;
+}
+
+.about-mission-statement {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.about-mission-content > p:last-child {
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.about-values-section {
+    background: var(--color-cream);
+}
+
+.about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 45px;
+}
+
+.about-value-card {
+    background: #2f321ed8;
+    padding: 30px 25px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-sand);
+}
+
+.about-value-number {
+    color: var(--color-terracotta);
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+}
+
+.about-value-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    margin: 18px 0 12px;
+}
+
+.about-value-card p {
+    line-height: 1.7;
+    color: var(--color-cocoa);
+}
+
+.about-global-section {
+    background: var(--color-sand);
+}
+
+.about-map-section {
+    background: var(--color-cream);
+}
+
+.about-map-wrapper {
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-sand);
+}
+
+.about-map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.about-map-caption {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: var(--color-cocoa);
+}
+
+.about-cta-section {
+    text-align: center;
+    background: var(--color-sand);
+}
+
+.about-cta-section h2 {
+    max-width: 750px;
+    margin: 15px auto;
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.about-cta-section p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+}
+
+.about-cta-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* About page responsive styles */
+
+@media (max-width: 900px) {
+    .about-introduction,
+    .about-history,
+    .about-global-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-history-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-hero {
+        min-height: 450px;
+    }
+
+    .about-hero-content {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .about-values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-intro-image img,
+    .about-history-image img,
+    .about-global-image img {
+        height: 300px;
+    }
+
+    .about-map-wrapper {
+        height: 320px;
+    }
+
+    .about-cta-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-hero {
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(25, 39, 29, 0.88),
+            rgba(25, 39, 29, 0.35)
+        ),
+        url("../images/hero/african-food-culture.jpg") center/cover no-repeat;
+    color: #fff;
+}
+
+.contact-hero-content {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.contact-hero-content h1 {
+    max-width: 700px;
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.1;
+    margin: 18px 0;
+}
+
+.contact-hero-content p {
+    max-width: 550px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.contact-main-section {
+    background: var(--color-cream);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 65px;
+    align-items: start;
+}
+
+.contact-information h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin: 15px 0 20px;
+}
+
+.contact-information > p {
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.contact-info-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 27px;
+}
+
+.contact-info-number {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    color: var(--color-terracotta);
+}
+
+.contact-info-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 7px;
+}
+
+.contact-info-item p {
+    line-height: 1.7;
+}
+
+.contact-form-card {
+    background: #fff;
+    border: 1px solid var(--color-sand);
+    border-radius: var(--radius-lg);
+    padding: 38px;
+    box-shadow: 0 15px 45px rgba(56, 43, 36, 0.06);
+}
+
+.contact-form-card .form-group {
+    margin-bottom: 22px;
+}
+
+.contact-form-card label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.contact-form-card input,
+.contact-form-card select,
+.contact-form-card textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid var(--color-sand);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--color-cocoa);
+    font: inherit;
+    font-size: 0.95rem;
+}
+
+.contact-form-card textarea {
+    resize: vertical;
+    min-height: 145px;
+}
+
+.contact-form-card input:focus,
+.contact-form-card select:focus,
+.contact-form-card textarea:focus {
+    outline: 3px solid rgba(198, 93, 54, 0.2);
+    border-color: var(--color-terracotta);
+}
+
+.contact-form-card small {
+    display: block;
+    margin-top: 8px;
+    color: #74675E;
+}
+
+.contact-submit {
+    width: 100%;
+    margin-top: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.form-disclaimer {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: #74675E;
+    margin-top: 18px;
+}
+
+.contact-success {
+    text-align: center;
+    padding: 35px 10px;
+}
+
+.contact-success[hidden] {
+    display: none;
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #E6F1E6;
+    color: #28633A;
+    border-radius: 50%;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-success h2 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.contact-success p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.contact-closing {
+    text-align: center;
+    background: var(--color-sand);
+}
+
+.contact-closing h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin: 15px 0 25px;
+}
+
+/* Contact page responsive styles */
+
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-hero {
+        min-height: 350px;
+    }
+
+    .contact-form-card {
+        padding: 25px 18px;
+    }
+
+    .contact-info-item {
+        gap: 14px;
+    }
+}
